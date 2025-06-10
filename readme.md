@@ -40,7 +40,7 @@ Car-Rental-Database/
 │   ├── menu.sh
 │   └── query1.sh → query5.sh
 ├── docs/
-│   └── er_diagram.png (optional)
+│   └── er_diagram.png
 ```
 
 ---
