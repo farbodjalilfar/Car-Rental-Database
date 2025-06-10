@@ -62,7 +62,6 @@ Copy the credentials template and update it:
 cp scripts/credentials_sample.sh scripts/credentials.sh
 ```
 
-> ⚠️ Never upload your real credentials to GitHub.
 
 ---
 
