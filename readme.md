@@ -1,15 +1,28 @@
-# 🚗 Car Rental Database
+# 🚗 Car Rental Database System
 
-A fully normalized and modular SQL project for managing a car rental system. This project includes table definitions, sample data, reusable views, procedures, and shell scripts for automation and interaction with an Oracle database.
+A modular, normalized SQL-based project designed to manage a car rental system. This project includes a fully relational schema, sample data, stored procedures, SQL views, and shell scripts for Oracle database automation. Ideal for academic projects, demos, or small-scale deployments.
 
 ---
 
-## 📁 Project Structure
+## 📦 Features
+
+- 🧱 Normalized SQL schema (3NF)
+- 📋 Sample data for testing and demonstration
+- 🔁 Stored procedure for business logic
+- 📊 Predefined SQL views for reporting
+- 🖥️ Shell scripts for automation and interaction with Oracle DB
+- 🧪 Testable and modular project layout
+- 🐘 PostgreSQL-compatible with slight syntax adjustments
+
+---
+
+## 📁 Folder Structure
 
 ```
-car-rental-database/
+Car-Rental-Database/
 ├── README.md
 ├── LICENSE
+├── .gitignore
 ├── schema/
 │   └── create_tables.sql
 ├── data/
@@ -21,101 +34,96 @@ car-rental-database/
 ├── scripts/
 │   ├── credentials_sample.sh
 │   ├── drop_tables.sh
-│   ├── menu.sh
 │   ├── test_connection.sh
 │   ├── view_customers.sh
 │   ├── view_rentals.sh
-│   └── query1.sh .. query5.sh
+│   ├── menu.sh
+│   └── query1.sh → query5.sh
 ├── docs/
 │   └── er_diagram.png (optional)
 ```
 
 ---
 
-## 🧱 Features
-
-- ✅ Normalized schema (3NF)
-- ✅ Clean modular SQL design
-- ✅ Realistic sample data
-- ✅ Reusable views for reporting
-- ✅ Stored procedures for business logic
-- ✅ Bash scripts for automation & querying
-- ✅ Oracle compatibility via `sqlplus64`
-- ✅ Ready for use in school projects or enterprise mockups
-
----
-
-## ▶️ Usage Guide
+## 🚀 Getting Started
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/car-rental-database.git
-cd car-rental-database
+git clone https://github.com/farbodjalilfar/Car-Rental-Database.git
+cd Car-Rental-Database
 ```
 
-### 2. Set Up Database
+### 2. Prepare Your Oracle Credentials
 
-In your Oracle SQL environment or compatible SQL tool:
-
-```sql
--- Step 1: Create tables
-@schema/create_tables.sql
-
--- Step 2: Insert sample data
-@data/insert_data.sql
-
--- Step 3: Add views and stored procedures
-@views/views.sql
-@procedures/complete_rental_function.sql
-```
-
-> Replace `@` with `\i` if using PostgreSQL or psql.
-
----
-
-## ⚙️ Shell Scripts (Optional for Oracle users)
-
-### 🛡️ Credentials
-
-Copy and edit the sample credentials:
+Copy the credentials template and update it:
 
 ```bash
 cp scripts/credentials_sample.sh scripts/credentials.sh
 ```
 
-Add your Oracle username and password in `credentials.sh`.
+> ⚠️ Never upload your real credentials to GitHub.
 
-### 🔧 Common Scripts
+---
+
+## 🛠️ Usage Instructions
+
+### Step 1: Create Tables
+
+```sql
+@schema/create_tables.sql
+```
+
+### Step 2: Insert Sample Data
+
+```sql
+@data/insert_data.sql
+```
+
+### Step 3: Add Views and Procedures
+
+```sql
+@views/views.sql
+@procedures/complete_rental_function.sql
+```
+
+> Use `\i` instead of `@` if you're using PostgreSQL.
+
+---
+
+## 🧪 Shell Scripts (Oracle CLI)
+
+Make sure you have `sqlplus64` installed. Then:
 
 ```bash
-bash scripts/test_connection.sh       # Test Oracle DB connection
-bash scripts/view_customers.sh        # View all customers
-bash scripts/view_rentals.sh          # View all rentals
-bash scripts/drop_tables.sh           # Drop main tables (reset)
-bash scripts/menu.sh                  # Interactive SQL query menu
+bash scripts/test_connection.sh      # Check DB connection
+bash scripts/view_customers.sh       # Display all customers
+bash scripts/view_rentals.sh         # Display all rentals
+bash scripts/drop_tables.sh          # Drop/reset tables
+bash scripts/menu.sh                 # Run interactive query menu
 ```
 
 ---
 
 ## 📊 SQL Views Overview
 
-| View Name               | Description                                  |
-|------------------------|----------------------------------------------|
-| `active_rentals`       | Shows currently confirmed rentals            |
-| `customer_rental_summary` | Shows rental count and total spend per customer |
-| `vehicle_status_summary` | Tracks usage and status of vehicles         |
-| `payment_method_summary` | Aggregates payments by method               |
+| View Name                | Description                                  |
+|-------------------------|----------------------------------------------|
+| `active_rentals`        | Shows active/confirmed rentals               |
+| `customer_rental_summary` | Total rentals and spending per customer     |
+| `vehicle_status_summary` | Usage stats and status per vehicle          |
+| `payment_method_summary` | Breakdown of payments by method             |
 
 ---
 
-## 🔁 Stored Procedure
+## 🧠 Stored Procedure
 
-| Procedure Name      | Description                                     |
-|---------------------|-------------------------------------------------|
-| `complete_rental()` | Updates a rental status to `'Completed'`        |
+| Procedure Name     | Description                        |
+|--------------------|------------------------------------|
+| `complete_rental()` | Marks a rental as 'Completed'      |
 
-Example (Oracle):
+**Usage Example:**
+
 ```sql
 BEGIN
   complete_rental(1);
@@ -125,13 +133,14 @@ END;
 
 ---
 
-## 📜 License
+## 🧾 License
 
 This project is licensed under the [MIT License](./LICENSE).
 
 ---
 
-## 💡 Credits
+## 🙋‍♂️ Author
 
-Developed by Farbod Jalilfar
-For academic, professional, and demonstration use.  
+**Farbod Jalilfar**  
+For academic use and practical database system demonstration.  
+Feel free to fork, star, and contribute!
